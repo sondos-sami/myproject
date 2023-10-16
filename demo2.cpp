@@ -90,7 +90,7 @@ void Blur(){
 
 //_________________________________________
 void Blur_ForImage() {
-    Blur();
+
     Blur();
     Blur();
     Blur();
