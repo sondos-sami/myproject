@@ -1,11 +1,9 @@
-// Program: demo2.cpp
-// Purpose: Demonstrate use of bmplip for handling
-//          bmp colored and grayscale images
-//          Program load a gray image and store in another file
-// Author:  Mohammad El-Ramly
-// Date:    30 March 2018
-// Version: 1.0
+/*name :mariam Eid mohamed  >>ID:20220330  >>Email:mariameid210@gmail.com
+  name :Sondos Smami Rabi   >>ID:20220156  >>Email:samysnds99@gmail.com
+  name:Dina  Ibrahim Hassan >>ID:20220541  >> dinaelrubii12@icloud.com
 
+
+*/
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -16,11 +14,7 @@
 using namespace std;
 unsigned char image[SIZE][SIZE];
 
-void loadImage ();
 
-void  SHUFFLE_ForImage();
-void saveImage ();
-//_________________________________________
 void loadImage () {
    char imageFileName[100];
 
