@@ -371,6 +371,74 @@ void  shrink(){
 
     }
 }
+void skew_horizontal(){
+    unsigned char shrinked_image[SIZE][SIZE];
+    unsigned char skewed_iamge[SIZE][SIZE];
+    for (int i = 0; i <SIZE ; ++i) {
+        for (int j = 0; j <SIZE ; ++j) {
+            shrinked_image[i][j] = 255;
+            skewed_iamge[i][j] = 255;
+        }
+    }
+    double degree;
+    cout<<" Enter the angle  to skew with : ";
+    cin>>degree;
+    degree=(degree*22)/(180*7);//convert angle from degrees into radian
+    int  x= 256/(1+(1/tan(degree)));
+
+    for (int i = 0; i < SIZE; ++i) {
+        for (int j = 0; j < SIZE; ++j) {
+            shrinked_image[i][(j * x)/SIZE] = image[i][j];//each pixel in the shrinked image is originally x pixels in the main image
+        }//here we shrinked only the coulms wth percent of x
+    }
+    double step =SIZE-x;
+    double move=step/SIZE;
+    for(int i=0;i<SIZE;++i){
+        for(int j=(int)step;j<(step+x);++j){
+            skewed_iamge[i][j]=shrinked_image[i][j-(int)step];
+        }
+        step-=move;
+    }
+    for(int i=0;i<SIZE;++i){
+        for(int j=0;j<SIZE;++j){
+            image[i][j]=skewed_iamge[i][j];
+        }
+    }
+}
+void skew_vertical(){
+    unsigned char shrinked_image[SIZE][SIZE];
+    unsigned char skewed_iamge[SIZE][SIZE];
+    for (int i = 0; i <SIZE ; ++i) {
+        for (int j = 0; j <SIZE ; ++j) {
+            shrinked_image[i][j] = 255;
+            skewed_iamge[i][j] = 255;
+        }
+    }
+    double degree;
+    cout<<" Enter the angle  to skew with : ";
+    cin>>degree;
+    degree=(degree*22)/(180*7);//convert angle from degrees into radian
+    int  x= SIZE/(1+tan(degree));
+
+    for (int i = 0; i < SIZE; ++i) {
+        for (int j = 0; j < SIZE; ++j) {
+            shrinked_image[(i * x)/SIZE][j] = image[i][j];//each pixel in the shrinked image is originally x pixels in the main image
+        }
+    }
+    double step =SIZE-x;
+    double move=step/SIZE;
+    for(int i=0;i<SIZE;++i){
+        for(int j=(int)step;j<(step+x);++j){
+            skewed_iamge[j][i]=shrinked_image[j-(int)step][i];
+        }
+        step-=move;
+    }
+    for(int i=0;i<SIZE;++i){
+        for(int j=0;j<SIZE;++j){
+            image[i][j]=skewed_iamge[i][j];
+        }
+    }
+}
 void crop_image(){
     for(int i=0;i<SIZE;++i){
         for(int j=0;j<SIZE;++j){
