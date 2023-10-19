@@ -18,7 +18,6 @@ unsigned char image[SIZE][SIZE];
 void loadImage () {
    char imageFileName[100];
 
-   // Get gray scale image file name
    cout << "Enter the source image file name: ";
    cin >> imageFileName;
 
