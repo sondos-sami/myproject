@@ -5,7 +5,6 @@
 
 */
 
-#include <cstring>
 #include <cmath>
 #include<vector>
 #include "bmplib.cpp"
